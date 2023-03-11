@@ -1,21 +1,6 @@
-//////////////////////////////////////////////////////////////////////
-//                                                                  //
-//   Program for displaying temperature on LCD using Arduino.       //
-//                                                                  //
-//   Hardware Used:                                                 //
-//    - Keyestudio Mega 2560 R3 (SBC)                               //
-//    - 1602A                   (LCD)                               //
-//    - NTC-MF52 3950           (Temperature Sensor)                //
-//                                                                  //
-//   Software Used:                                                 //
-//    - Visual Code    (IDE)                                        //
-//    - PlatformIO     (Platform)                                   //
-//    - NTC_Thermistor (Library)                                    //
-//    - LiquidCrystal  (Library)                                    //
-//                                                                  //
-//                           Copyright (c) 2023, André Jakobsson.   //
-//                                                                  //
-//////////////////////////////////////////////////////////////////////
+/**
+ * Copyright (c) 2023, André Jakobsson.
+ */
 
 #include <Arduino.h>
 #include <NTC_Thermistor.h>
@@ -77,7 +62,7 @@ void setup() {
   lcd->begin(16, 2);              // Our display is 16x2
   lcd->clear();
 
-  analogWrite(LCD_CONTRAST, 1);   // Set contrast to highest (hard to see otherwise)
+  analogWrite(LCD_CONTRAST, 1);   // Set contrast (hard to see otherwise)
 }
 
 void loop() {
@@ -92,7 +77,7 @@ void loop() {
   lcd->print(celsius);
   lcd->print("]        ");
 
-  // Turn of built-in LED and sleep for about 1 second. This is to not overload any components
+  // Turn off built-in LED and sleep for about 1 second. This is to not overload any components
   digitalWrite(LED_BUILTIN, LOW);
   delay(DELAY_MS);
 }
