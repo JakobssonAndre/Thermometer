@@ -15,3 +15,7 @@ Program for displaying temperature on LCD using Arduino.
 - NTC_Thermistor            (Library)
 - LiquidCrystal             (Library)
 
+## Result
+
+![alt text](/20230311_030339.jpg)
+
